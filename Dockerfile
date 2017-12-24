@@ -22,11 +22,10 @@ ENV CATALINA_OPTS -server -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryL
 
 ENV FORGEROCK_HOME /home/forgerock
 ENV OPENAM_HOME /home/forgerock/openam
-
-ADD openam.war  /tmp/openam.war
-
+ 
 # openldap-clients is needed to test for the configuration store.
 RUN apk add --no-cache su-exec unzip curl bash openldap-clients \
+  && curl https://s3.eu-west-2.amazonaws.com/forgerock5/AM-5.5.1.war -o /tmp/openam.war \
   && rm -fr /usr/local/tomcat/webapps/* \
   && unzip -q /tmp/openam.war -d  "$CATALINA_HOME"/webapps/openam \
   && rm /tmp/openam.war \
