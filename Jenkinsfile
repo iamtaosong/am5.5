@@ -31,7 +31,7 @@ node {
         //     app.push("${env.BUILD_NUMBER}")
         //     app.push("latest")
         // }
-        app.push("${env.BUILD_NUMBER}")
+        // app.push("${env.BUILD_NUMBER}")
         app.push("latest")
  
     }
