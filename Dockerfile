@@ -75,7 +75,7 @@ ENV CUSTOMIZE_AM /home/forgerock/customize-am.sh
 
 
 ADD *.sh $FORGEROCK_HOME/
-
+ADD docker-entrypoint.sh $FORGEROCK_HOME/
 ENTRYPOINT ["/home/forgerock/docker-entrypoint.sh"]
 
 CMD ["run"]
