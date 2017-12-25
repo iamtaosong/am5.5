@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        app = docker.build("taosong/am551")
+        app = docker.build("taosong/am55")
     }
 
     stage('Test image') {
